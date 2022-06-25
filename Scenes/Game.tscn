@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/background.png" type="Texture" id=1]
+[ext_resource path="res://sprites/ship.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Ship.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Animação Ship"
+
+[node name="Game" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Ship" type="Node2D" parent="."]
+position = Vector2( 80, 250 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ship" type="Sprite" parent="Ship"]
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="Ship Animação" type="AnimationPlayer" parent="Ship"]
+"anims/Animação Ship" = SubResource( 1 )
